@@ -38,6 +38,7 @@ writer.on('drain', () => {
 
 /** 書き込みストリームの完了イベント */
 writer.on('finish', () => {
+  console.log('writer finish!');
   console.log('drainCount: ' + drainCount);
   console.timeEnd('stream1'); // 計測終了
 });
