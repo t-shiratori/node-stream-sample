@@ -11,7 +11,7 @@ let drainCount = 0;
 const reader = createReadStream('./input.txt', {highWaterMark: HIGH_WATER_MARK});
 const writer = createWriteStream('./output.txt', {highWaterMark: HIGH_WATER_MARK});
 
-console.time('stream1'); // 計測開始
+console.time('streamingTime'); // 計測開始
 
 /** 読み込みストリームのデータ取得イベント */
 reader.on("data", (chunk) => {
@@ -40,5 +40,5 @@ writer.on('drain', () => {
 writer.on('finish', () => {
   console.log('writer finish!');
   console.log('drainCount: ' + drainCount);
-  console.timeEnd('stream1'); // 計測終了
+  console.timeEnd('streamingTime'); // 計測終了
 });
